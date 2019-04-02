@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Inicio.unity
+    guid: 8d779e3963c6a194cb0196fc56d0d0d8
+  - enabled: 1
+    path: Assets/Scenes/LevelSelector.unity
+    guid: bf33979077c853f4680d2cc727897676
+  - enabled: 1
+    path: Assets/Scenes/Tutorial.unity
+    guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 1
+    path: Assets/Scenes/Nivel01.unity
+    guid: 3a65c9e31dada2e42818db2d19758b66
+  - enabled: 1
+    path: Assets/Scenes/Nivel02.unity
+    guid: 7c12217249c1c624d917958e8e0d6b81
+  - enabled: 1
+    path: Assets/Scenes/Nivel03.unity
+    guid: 1d0072d061441144abc2170df795364b
+  - enabled: 1
+    path: Assets/Scenes/Nivel04.unity
+    guid: ebd140966a7ddce4cbe8e19747b0c2e9
+  - enabled: 1
+    path: Assets/Scenes/Nivel05.unity
+    guid: 2722264449d33c2499c4e760e3411991
+  - enabled: 0
+    path: Assets/Scenes/Plantilla Nivel.unity
+    guid: e000ab6c3c9da8c49a5ace35f199169a
+  m_configObjects: {}
