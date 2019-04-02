@@ -34,6 +34,12 @@ public class GameManager : MonoBehaviour
             PlayerPrefs.SetInt("Nivel Ganado", 10);
             Debug.LogError("PERMITIENDO INGRESO A CUALQUIER NIVEL !!");
         }
+        else
+        {
+            Debug.LogWarning("No se configuro ninguna variable especial");
+        }
+
+        Debug.LogWarning("Variable niveles guardados: " + PlayerPrefs.GetInt("Nivel Ganado"));
 
         if (flagOpcionesMenu)
         {
