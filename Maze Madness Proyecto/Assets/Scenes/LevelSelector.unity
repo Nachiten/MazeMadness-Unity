@@ -1895,7 +1895,7 @@ GameObject:
   - component: {fileID: 1269137329}
   - component: {fileID: 1269137328}
   - component: {fileID: 1269137327}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Piso
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2016,10 +2016,10 @@ GameObject:
   - component: {fileID: 1339524000}
   - component: {fileID: 1339523999}
   - component: {fileID: 1339523998}
+  - component: {fileID: 1339523997}
   - component: {fileID: 1339523996}
   - component: {fileID: 1339523995}
   - component: {fileID: 1339523994}
-  - component: {fileID: 1339523997}
   m_Layer: 9
   m_Name: Jugador
   m_TagString: Jugador
@@ -2071,8 +2071,8 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
---- !u!135 &1339523997
-SphereCollider:
+--- !u!65 &1339523997
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -2082,7 +2082,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1339523998
 MeshRenderer:
