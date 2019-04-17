@@ -6,10 +6,6 @@ public class TilingModifier : MonoBehaviour
 {
     int contador = 1;
 
-    Transform transform;
-
-    Renderer textura;
-
     GameObject piso;
 
     // Start is called before the first frame update
@@ -19,8 +15,8 @@ public class TilingModifier : MonoBehaviour
 
             piso = GameObject.Find("Piso " + contador.ToString());
 
-            transform = piso.GetComponent<Transform>();
-            textura = piso.GetComponent<Renderer>();
+            Transform transform = piso.GetComponent<Transform>();
+            Renderer textura = piso.GetComponent<Renderer>();
 
             // Ajustar "Tiling" de textura
             textura.material.mainTextureScale = new Vector2(transform.localScale.x / 10, transform.localScale.z / 10);
