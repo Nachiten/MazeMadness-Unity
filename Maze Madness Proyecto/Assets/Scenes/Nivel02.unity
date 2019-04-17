@@ -418,7 +418,7 @@ PrefabInstance:
     - target: {fileID: 850979578116177264, guid: 166d149967555ca4a834f33f1600fa8b,
         type: 3}
       propertyPath: m_Name
-      value: Piso (6)
+      value: Piso 6
       objectReference: {fileID: 0}
     - target: {fileID: 850979578116177276, guid: 166d149967555ca4a834f33f1600fa8b,
         type: 3}
@@ -1498,7 +1498,7 @@ PrefabInstance:
     - target: {fileID: 850979578116177264, guid: 166d149967555ca4a834f33f1600fa8b,
         type: 3}
       propertyPath: m_Name
-      value: Piso (3)
+      value: Piso 3
       objectReference: {fileID: 0}
     - target: {fileID: 850979578116177276, guid: 166d149967555ca4a834f33f1600fa8b,
         type: 3}
@@ -2103,7 +2103,7 @@ PrefabInstance:
     - target: {fileID: 850979578116177264, guid: 166d149967555ca4a834f33f1600fa8b,
         type: 3}
       propertyPath: m_Name
-      value: Piso (1)
+      value: Piso 1
       objectReference: {fileID: 0}
     - target: {fileID: 850979578116177276, guid: 166d149967555ca4a834f33f1600fa8b,
         type: 3}
@@ -2193,7 +2193,7 @@ PrefabInstance:
     - target: {fileID: 850979578116177264, guid: 166d149967555ca4a834f33f1600fa8b,
         type: 3}
       propertyPath: m_Name
-      value: Piso (10)
+      value: Piso 9
       objectReference: {fileID: 0}
     - target: {fileID: 850979578116177276, guid: 166d149967555ca4a834f33f1600fa8b,
         type: 3}
@@ -2442,7 +2442,7 @@ GameObject:
   - component: {fileID: 836356278}
   - component: {fileID: 836356277}
   m_Layer: 8
-  m_Name: Piso (11)
+  m_Name: Piso 11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2871,7 +2871,7 @@ PrefabInstance:
     - target: {fileID: 850979578116177264, guid: 166d149967555ca4a834f33f1600fa8b,
         type: 3}
       propertyPath: m_Name
-      value: Piso (4)
+      value: Piso 4
       objectReference: {fileID: 0}
     - target: {fileID: 850979578116177276, guid: 166d149967555ca4a834f33f1600fa8b,
         type: 3}
@@ -3474,7 +3474,7 @@ GameObject:
   - component: {fileID: 1411678373}
   - component: {fileID: 1411678372}
   m_Layer: 8
-  m_Name: Piso (8)
+  m_Name: Piso 10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3712,7 +3712,7 @@ PrefabInstance:
     - target: {fileID: 850979578116177264, guid: 166d149967555ca4a834f33f1600fa8b,
         type: 3}
       propertyPath: m_Name
-      value: Piso (5)
+      value: Piso 5
       objectReference: {fileID: 0}
     - target: {fileID: 850979578116177276, guid: 166d149967555ca4a834f33f1600fa8b,
         type: 3}
@@ -3833,7 +3833,7 @@ PrefabInstance:
     - target: {fileID: 850979578116177264, guid: 166d149967555ca4a834f33f1600fa8b,
         type: 3}
       propertyPath: m_Name
-      value: Piso (2)
+      value: Piso 2
       objectReference: {fileID: 0}
     - target: {fileID: 850979578116177276, guid: 166d149967555ca4a834f33f1600fa8b,
         type: 3}
@@ -4675,7 +4675,7 @@ PrefabInstance:
     - target: {fileID: 850979578116177264, guid: 166d149967555ca4a834f33f1600fa8b,
         type: 3}
       propertyPath: m_Name
-      value: Piso (9)
+      value: Piso 8
       objectReference: {fileID: 0}
     - target: {fileID: 850979578116177276, guid: 166d149967555ca4a834f33f1600fa8b,
         type: 3}
@@ -4990,7 +4990,7 @@ PrefabInstance:
     - target: {fileID: 850979578116177264, guid: 166d149967555ca4a834f33f1600fa8b,
         type: 3}
       propertyPath: m_Name
-      value: Piso (7)
+      value: Piso 7
       objectReference: {fileID: 0}
     - target: {fileID: 850979578116177276, guid: 166d149967555ca4a834f33f1600fa8b,
         type: 3}
