@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEditor;
+using System;
 
 public class VentanaEditor : EditorWindow
 {
@@ -7,7 +8,7 @@ public class VentanaEditor : EditorWindow
     bool error;
     float posicionZ;
     float posicionX;
-
+    string reduccionX = "0";
 
     [MenuItem("Window/[Vetana]")]
 
@@ -21,6 +22,8 @@ public class VentanaEditor : EditorWindow
     void OnGUI()
     {
         desplaza = EditorGUILayout.TextField("Desplazamiento Z", desplaza);
+
+        reduccionX = EditorGUILayout.TextField("Reduccion X", reduccionX);
 
         GUILayout.Label("Modificar posicion:", EditorStyles.boldLabel);
 
@@ -65,7 +68,7 @@ public class VentanaEditor : EditorWindow
                     if (!error)
                     {
                         Vector3 posicion = new Vector3(posicionX, transform.position.y - 3, posicionZ);
-                        Vector3 scale = new Vector3(transform.localScale.x, transform.localScale.y + 5, transform.localScale.z);
+                        Vector3 scale = new Vector3(transform.localScale.x - Int32.Parse(reduccionX), transform.localScale.y + 5, transform.localScale.z);
 
                         transform.rotation = Quaternion.Euler(90, transform.rotation.eulerAngles.y, transform.rotation.eulerAngles.z);
 
@@ -121,7 +124,7 @@ public class VentanaEditor : EditorWindow
                 }
 
                     Vector3 posicion = new Vector3(posicionX, transform.position.y + 3, posicionZ);
-                    Vector3 scale = new Vector3(transform.localScale.x, transform.localScale.y - 5, transform.localScale.z);
+                    Vector3 scale = new Vector3(transform.localScale.x + Int32.Parse(reduccionX), transform.localScale.y - 5, transform.localScale.z);
 
                     transform.rotation = Quaternion.Euler(0, transform.rotation.eulerAngles.y, transform.rotation.eulerAngles.z);
 
