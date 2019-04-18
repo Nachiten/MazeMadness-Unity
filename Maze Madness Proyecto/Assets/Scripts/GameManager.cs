@@ -105,7 +105,9 @@ public class GameManager : MonoBehaviour
         //  pantallaGano = GameObject.FindGameObjectWithTag("Pantalla Gano");
 
         // Darle valor a la variable que acumula niveles ganados [Guardada al cerrar]
-        PlayerPrefs.SetInt("Nivel Ganado", SceneManager.GetActiveScene().buildIndex - 2);
+        if (PlayerPrefs.GetInt("Nivel Ganado") < SceneManager.GetActiveScene().buildIndex - 2)
+
+            PlayerPrefs.SetInt("Nivel Ganado", SceneManager.GetActiveScene().buildIndex - 2);
 
         Debug.Log("El nivel ganado actualmente es: " + PlayerPrefs.GetInt("Nivel Ganado"));
 

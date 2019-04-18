@@ -4766,7 +4766,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb88aa234442fd24eb14d4ef39cfd36a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AllLevelsAccess: 1
+  AllLevelsAccess: 0
   RestartVariable: 0
 --- !u!114 &1705092790
 MonoBehaviour:

@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿/*
+
+using UnityEngine;
 using UnityEditor;
 using System;
 
@@ -135,3 +137,6 @@ public class VentanaEditor : EditorWindow
         }
     }
 }
+
+
+*/
