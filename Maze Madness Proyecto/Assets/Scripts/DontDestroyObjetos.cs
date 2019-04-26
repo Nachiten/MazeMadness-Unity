@@ -2,23 +2,15 @@
 
 public class DontDestroyObjetos : MonoBehaviour
 {
-    //Objetos Menus
+    //Objeto Menus
     GameObject EscapeMenu;
-    GameObject Opciones;
-    GameObject PanelSalida;
-    //Objetos Musica
-    GameObject musica1;
-    GameObject musica2;
-    GameObject musica3;
-
-    // Flags menus
+    //Objeto Musica
+    GameObject music;
+   
+    // Flag menus
     static bool flagMenu = true;
-    static bool flagOpciones = true;
-    static bool flagSalida = true;
-    // Flags musica
+    // Flag musica
     static bool flag1 = true;
-    static bool flag2 = true;
-    static bool flag3 = true;
 
     /* -------------------------------------------------------------------------------- */
 
@@ -28,50 +20,21 @@ public class DontDestroyObjetos : MonoBehaviour
         //No destruir si es el primero
         if (flagMenu)
         {
-            //EscapeMenu = asignarNombre(EscapeMenu);
-            
-            EscapeMenu = GameObject.FindGameObjectWithTag("EscapeMenu");
+            EscapeMenu = GameObject.Find("Menus [DontDestroy]");
             DontDestroyOnLoad(EscapeMenu);
 
             flagMenu = false;
         }
-        else if (flagOpciones)
-        {
-            Opciones = GameObject.FindGameObjectWithTag("Opciones");
-            DontDestroyOnLoad(Opciones);
-
-            flagOpciones = false;
-        }
-        else if (flagSalida)
-        {
-            PanelSalida = GameObject.FindGameObjectWithTag("MensajeSalida");
-            DontDestroyOnLoad(PanelSalida);
-
-            flagSalida = false;
-        }
         else if (flag1)
         {
-            musica1 = GameObject.FindGameObjectWithTag("Music 1");
-            DontDestroyOnLoad(musica1);
+            music = GameObject.Find("Music");
+            DontDestroyOnLoad(music);
 
             flag1 = false;
         }
-        else if (flag2)
-        {
-            musica2 = GameObject.FindGameObjectWithTag("Music 2");
-            DontDestroyOnLoad(musica2);
-
-            flag2 = false;
-        }
-        else if (flag3)
-        {
-            musica3 = GameObject.FindGameObjectWithTag("Music 3");
-            DontDestroyOnLoad(musica3);
-
-            flag3 = false;
-        }
         else
         {
+            // Destruir si ya existe uno
             Debug.Log("DESTRUYENDO TODO");
             Destroy(gameObject);
         }
