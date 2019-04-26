@@ -128,7 +128,7 @@ public class GameManager : MonoBehaviour
     void Update()
     {
 
-        if (SceneManager.GetActiveScene().buildIndex > 1 && Input.GetKeyDown("escape"))
+        if (SceneManager.GetActiveScene().buildIndex > 0 && Input.GetKeyDown("escape"))
         {
             // SE ABRE MENU
             if (flag)
@@ -150,21 +150,19 @@ public class GameManager : MonoBehaviour
 
     public bool manejarMenu(bool cambio)
     {
-        Cursor.visible = cambio;
-        // Si el menu fue abierto
-        if (cambio == true)
+        if (SceneManager.GetActiveScene().buildIndex > 1)
         {
-            Cursor.lockState = CursorLockMode.None;
-        }
-        // Si el menu fue cerrado
-        else {
-            
-            Cursor.lockState = CursorLockMode.Locked;
-        }
+            Cursor.visible = cambio;
+            // Si el menu fue abierto
+            if (cambio == true) Cursor.lockState = CursorLockMode.None;
+        
+            // Si el menu fue cerrado
+            else Cursor.lockState = CursorLockMode.Locked;
 
-        GameObject.FindGameObjectWithTag("Jugador").GetComponent<PlayerMovement>().enabled = !cambio;
-        GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraMovement>().enabled = !cambio;
-        GameObject.FindGameObjectWithTag("Jugador").GetComponent<Rigidbody>().isKinematic = cambio;
+            GameObject.FindGameObjectWithTag("Jugador").GetComponent<PlayerMovement>().enabled = !cambio;
+            GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraMovement>().enabled = !cambio;
+            GameObject.FindGameObjectWithTag("Jugador").GetComponent<Rigidbody>().isKinematic = cambio;
+        }
 
         menu.SetActive(cambio);
         cambio = !cambio;

@@ -1,67 +1,124 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 using UnityEngine.UI;
+//using UnityEngine.Analytics;
 using UnityEngine.SceneManagement;
 
 public class LevelSelector : MonoBehaviour {
 
-    public Text nivelNoAlcanza;
-    public GameObject proximamente;
+    static GameObject levelLoader;
+    static Slider slider;
+    static Text textoProgreso;
+    static Text textoNivel;
+
+    public Texture[] textura;
+
+    public bool DeleteKeys = false;
+    static bool flag = true;
+    static bool flagCandado = true;
+
+    static GameObject[] candados;
 
     /* -------------------------------------------------------------------------------- */
 
     // Muestra que niveles se ganaron al abrir la escena
-    private void Start()
+    void Start()
     {
-    Debug.Log("Los niveles ganados son: " + PlayerPrefs.GetInt("Nivel Ganado"));
+        if (flag)
+        {
+            // Aisgnar variables
+            levelLoader = GameObject.Find("Panel Carga");
+            textoProgreso = GameObject.Find("TextoProgreso").GetComponent<Text>();
+            slider = GameObject.Find("Barra Carga").GetComponent<Slider>();
+
+            textoNivel = GameObject.Find("Texto Cargando").GetComponent<Text>();
+
+            flag = false;
+        }
+        Debug.Log("Los niveles ganados son: " + PlayerPrefs.GetInt("Nivel Ganado"));
+
+        levelLoader.SetActive(false);
+
+        if (SceneManager.GetActiveScene().buildIndex == 1)
+        {
+            if (flagCandado)
+            {
+                candados = new GameObject[9];
+
+                for (int i = 2; i < 11; i++)
+                {
+                    candados[i-2] = GameObject.Find("Nivel" + i.ToString());
+                    Debug.Log(candados[i-2]);
+                    candados[i - 2].SetActive(true);
+
+                }
+                flagCandado = true;
+            }
+
+            for (int i = 2; i <= PlayerPrefs.GetInt("Nivel Ganado") + 1; i++)
+            { 
+                if (i < 11) candados[i - 2].SetActive(false);
+            }
+        }
     }
 
     /* -------------------------------------------------------------------------------- */
 
     public void Nivelx (int x)
     {
-        string NombreNivel;
+        StartCoroutine(cargarAsincronizadamente(x));
+        textoNivel.text = "Cargando '" + SceneManager.GetSceneByBuildIndex(x).name + "' ...";
+    }
 
-        if (x == 10) { // Si el nivel es 10 no se pone 0
-            NombreNivel = "Nivel" + x;
-        } else { // Si es 1-9 se pone un 0
-            NombreNivel = "Nivel0" + x;
-        }
-        
-        if (x <= 5)
+    /* -------------------------------------------------------------------------------- */
+
+    // Iniciar Corutina para cargar nivel en background
+    IEnumerator cargarAsincronizadamente(int index)
+    {
+        // Iniciar carga de escena
+        AsyncOperation operacion = SceneManager.LoadSceneAsync(index);
+
+        // Mostrar pantalla de carga
+        levelLoader.SetActive(true);
+
+        Debug.Log("Cargando escena: " + index);
+
+        // Mientras la operacion no este terminada
+        while (!operacion.isDone)
         {
-            // Si Nivel anterior ganado, entra al nivel
-            if (PlayerPrefs.GetInt("Nivel Ganado") >= x-1)
-            {
-                SceneManager.LoadScene(NombreNivel);
-            }
-            else // Si no gano, muestra texto
-            {
-                NivelNoAlcanza();
-            }
-        }
-        else
-        {
-            // Niveles 6-10 todavia no terminados
-            Proximamente();
+            // Generar valor entre 0 y 1
+            float progress = Mathf.Clamp01(operacion.progress / .9f);
+            // Modificar Slider
+            slider.value = progress;
+            // Modificar texto progreso
+            textoProgreso.text = progress * 100f + "%";
+
+            yield return null;
         }
     }
 
     /* -------------------------------------------------------------------------------- */
+
+    GameObject nivelNoAlcanza;
 
     void NivelNoAlcanza()
     {
-        // Se activa el texto
-        nivelNoAlcanza.enabled = true;
+        // Asignar variable
+        nivelNoAlcanza = GameObject.Find("NivelNoAlcanza");
+
         // Animacion Comienza en segundo 0
-        gameObject.GetComponent<Animator>().Play("SelectorNivel", -1, 0);
+        nivelNoAlcanza.GetComponent<Animator>().Play("SelectorNivel", -1, 0);
     }
 
     /* -------------------------------------------------------------------------------- */
 
+    GameObject proximamente;
+
     public void Proximamente()
     {
-        // Se activa el texto
-        proximamente.GetComponent<Text>().enabled = true;
+        // Asignar variable
+        proximamente = GameObject.Find("Proximamente");
+
         // Animacion Comienza en segundo 0
         proximamente.GetComponent<Animator>().Play("Proximamente", -1, 0);
     }
@@ -69,14 +126,10 @@ public class LevelSelector : MonoBehaviour {
     /* -------------------------------------------------------------------------------- */
 
     // Cargar siguiente nivel al terminar la animacion
-    public void SiguienteNivel()
-    {
-        Debug.Log("Cargando siguiente nivel");
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-    }
+    public void SiguienteNivel() { Nivelx(SceneManager.GetActiveScene().buildIndex + 1); }
 
     /* -------------------------------------------------------------------------------- */
 
     // Ejecutar reinicio al terminar animacion
-    public void Restart() { SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex); }
+    public void Restart() { Nivelx(SceneManager.GetActiveScene().buildIndex); }
 }

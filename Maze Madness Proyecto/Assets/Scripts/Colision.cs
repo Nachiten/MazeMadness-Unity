@@ -9,7 +9,7 @@ public class Colision : MonoBehaviour {
     public CameraMovement camara;
 
     // Referencia al texto
-    public Text puntaje;
+    Text puntaje;
 
     // Variables para contar las monedas
     public bool[] coins = new bool[] {false};
@@ -24,7 +24,10 @@ public class Colision : MonoBehaviour {
 
     void Start()
     {
-        Debug.Log("La cantidad de monedas en esta escena es: " + coins.Length);
+        if (SceneManager.GetActiveScene().buildIndex > 1) { 
+            Debug.Log("La cantidad de monedas en esta escena es: " + coins.Length);
+            puntaje = GameObject.Find("Texto Monedas").GetComponent<Text>();
+        }
     }
 
     private void OnCollisionEnter(Collision tocar){

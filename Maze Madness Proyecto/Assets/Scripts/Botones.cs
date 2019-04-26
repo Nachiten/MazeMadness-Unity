@@ -2,19 +2,24 @@
 using UnityEngine.SceneManagement;
 
 public class Botones : MonoBehaviour {
-    public GameObject menu;
-    public GameObject opciones;
+    static GameObject menu;
+    static GameObject opciones;
            GameObject texto;
-    static GameObject botonComenzar;
+   // static GameObject botonComenzar;
     static GameObject panelSalida;
 
     static bool flag = true;
 
     void Start()
     {
-        if (flag) { 
-        panelSalida = GameObject.FindGameObjectWithTag("MensajeSalida");
-        flag = false;
+        Debug.Log("CARGO!");
+
+        if (flag) {
+            menu = GameObject.Find("Menu");
+            opciones = GameObject.Find("Opciones");
+            panelSalida = GameObject.FindGameObjectWithTag("MensajeSalida");
+
+            flag = false;
         }
     }
 
@@ -22,26 +27,10 @@ public class Botones : MonoBehaviour {
 
     public void Comenzar_Continuar ()
     {
-        if (SceneManager.GetActiveScene().buildIndex == 0)
-        {
-            SceneManager.LoadScene("Nivel01");
-        }
-        else
-        {
-            GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>().manejarMenu(false);
-        }
+        if (SceneManager.GetActiveScene().buildIndex == 0) cargarNivel(3);
+
+        else GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>().manejarMenu(false);
     }
-
-    /* -------------------------------------------------------------------------------- */
-
-    public void IniciarTutorial()
-    {
-        SceneManager.LoadScene("Tutorial");
-    }
-
-    /* -------------------------------------------------------------------------------- */
-
-    public void Inicio() { SceneManager.LoadScene("Inicio"); }
 
     /* -------------------------------------------------------------------------------- */
 
@@ -50,14 +39,14 @@ public class Botones : MonoBehaviour {
         Debug.Log("Desactivando menus");
         menu.SetActive(false);
         opciones.SetActive(false);
-
+        /*
         // Ocultar dexto del inicio si estamos en escena Inicio
         if (SceneManager.GetActiveScene().buildIndex == 0)
         {
             texto = GameObject.FindGameObjectWithTag("TextoInicio");
             Debug.Log("Desactivando texto");
             texto.SetActive(false);
-        }
+        }*/
 
         // Activar panel salida
         panelSalida.SetActive(true);
@@ -69,11 +58,7 @@ public class Botones : MonoBehaviour {
 
     /* -------------------------------------------------------------------------------- */
 
-    public void LevelSelector()
-    {
-        //activarMeus();
-        SceneManager.LoadScene("LevelSelector");
-    }
+    public void cargarNivel(int nivel) { FindObjectOfType<LevelSelector>().Nivelx(nivel); }
 
     /* -------------------------------------------------------------------------------- */
 

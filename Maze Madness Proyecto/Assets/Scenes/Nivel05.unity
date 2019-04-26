@@ -3356,6 +3356,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20295a673a0232f4f8f3a198f2811530, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bolaTransform: {fileID: 0}
 --- !u!20 &282840813
 Camera:
   m_ObjectHideFlags: 0
@@ -9714,6 +9715,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb88aa234442fd24eb14d4ef39cfd36a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AllLevelsAccess: 0
+  RestartVariable: 0
 --- !u!95 &1029093828
 Animator:
   serializedVersion: 3
@@ -14276,6 +14279,7 @@ GameObject:
   - component: {fileID: 1705092788}
   - component: {fileID: 1705092789}
   - component: {fileID: 1705092790}
+  - component: {fileID: 1705092791}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -14309,6 +14313,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb88aa234442fd24eb14d4ef39cfd36a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AllLevelsAccess: 0
+  RestartVariable: 0
 --- !u!114 &1705092790
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14321,9 +14327,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74e23565178bbba46babbc96b3dfa060, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  menu: {fileID: 0}
-  opciones: {fileID: 0}
-  texto: {fileID: 0}
+--- !u!114 &1705092791
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1705092787}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81642079e57c30443bda9f8d56bacefa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textura: []
+  DeleteKeys: 0
 --- !u!1 &1711609348
 GameObject:
   m_ObjectHideFlags: 0
