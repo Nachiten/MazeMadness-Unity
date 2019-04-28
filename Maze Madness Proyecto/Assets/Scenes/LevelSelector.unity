@@ -2610,7 +2610,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movimiento: {fileID: 0}
   camara: {fileID: 0}
-  puntaje: {fileID: 0}
   coins: 
 --- !u!114 &1339523995
 MonoBehaviour:
@@ -3276,6 +3275,7 @@ GameObject:
   - component: {fileID: 1705092789}
   - component: {fileID: 1705092790}
   - component: {fileID: 1705092791}
+  - component: {fileID: 1705092792}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: GameManager
@@ -3337,6 +3337,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textura: []
   DeleteKeys: 0
+--- !u!114 &1705092792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1705092787}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8027d9770d7ff440982e98a040aa094, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1748625754
 GameObject:
   m_ObjectHideFlags: 0
