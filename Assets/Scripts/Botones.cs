@@ -10,6 +10,8 @@ public class Botones : MonoBehaviour {
 
     static bool flag = true;
 
+    //
+
     void Start()
     {
         Debug.Log("CARGO!");
